@@ -1,0 +1,48 @@
+<style>
+    .wrap {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.25em 0.625em;
+}
+</style>
+<div ng-if="showDashboard==true" class="container"  >
+    <section>
+        
+                <div class="container" >
+                        <div class="wrap">
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <h2>Welcome {{loginuserfullname}}</h2>
+                                </div>
+                                <div class="col-lg-2">
+                                   <div style="padding-top:5px">
+                                        <button class="btn btn-default" ng-click="navigateDashToBoard()">ADD BOARD</button> 
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <hr />
+                            <div class="row"></div>
+                                    <div  ng-repeat="board in dashboarddetails | filter:{ linkedinid: linkedinid } | orderBy: boarddate">
+                                <div class="col-md-3 col-sm-3 col-xs-6">
+                                    <h5><a style="color:#C90035" ng-click="redirectToBoard(board.$id)"> {{ board.date_created | date : 'yyyy-dd-MM'}}</a></h5>
+                                    <!-- <h5><a href='http://localhost:4000/#{{ board.$id }}'> {{ board.date_created | date : 'yyyy-dd-MM'}}</a></h5> -->
+                                    <div class="alert alert-info text-center">
+                                        <div class="panel-body">
+                                            <i style="color:#C90035;" class="fa fa-bar-chart-o fa-5x"></i>
+                                            <h3 style="color:#C90035">{{board.actionitemcount}} </h3>
+                                        </div>
+                                    </div>
+                                    </div>
+                               
+                            </div>
+                          
+                        </div>
+                      
+                    </div>
+        
+                </div>
+      
+      
+              </section> 
+  </div>

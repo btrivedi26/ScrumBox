@@ -1,0 +1,51 @@
+<html ng-app="fireideaz" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bacon - Easy.Fun.Retros</title>
+
+  
+  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-social.css">
+  <script src="vendor.js"></script>
+  <script src="main.js"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body ng-controller="MainCtrl">
+    
+    <div class="row ScrumBox-pro">
+        <div class="col-lg-3"><h1>
+          <img src="img/Bacon_3.png" style="width:90px;height:60px;float:left;"/><div style="padding-top:20px">Bacon.ly</div>
+           </h1></div>
+        <div class="col-lg-3"></div>
+        <div class="col-lg-3"></div>
+        <div class="col-lg-3"> 
+          <p  style="padding-top:25px;">
+            <a  ng-if="LinkedInValidated==false"
+            ng-click="redirectToLinkedPage()" class="btn btn-social btn-linkedin"> 
+          <!-- <a 
+          href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77y6szcym3yi3y&redirect_uri=http://localhost:4000/dashboard.html&state=987654321&scope=r_basicprofile" class="btn btn-social btn-linkedin"> -->
+            <span class="fa fa-linkedin"></span>  Sign in with LinkedIn
+          </a></p></div>
+  </div>
+  </div>
+  <div page-header></div>
+  <dashboard style="width:100%"></dashboard>
+  <div page-header></div>
+  <nav menu></nav>
+  <board-context></board-context>
+  <main-page></main-page>
+  <main main-content></main>
+  <sidebar></sidebar>
+  <div about></div>
+  <spinner></spinner>
+  <dialogs></dialogs>
+  
+</body>
+
+
+</html>

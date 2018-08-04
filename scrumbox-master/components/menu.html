@@ -1,0 +1,27 @@
+<div class="row">
+    <div ng-show="userId !== ''" class="menu" >
+    <div class="col-lg-3"><span class="board-name-container" ng-click="editingBoardName=true;newBoardName=boardId;">
+        <h2 id="board-name" class="board-name" ng-show="!editingBoardName">{{boardId}}</h2>
+        <i class="fa fa-pencil" ng-show="!editingBoardName"></i>
+      </span>
+      <span ng-show="editingBoardName" class="editing-board-name">
+        <input title="edit the board name" ng-model="newBoardName" focus></input>
+        <button ng-click="changeBoardName(newBoardName);editingBoardName=false;" class="btn btn-default">Save</button>
+        <a class="btn btn-danger" ng-click="editingBoardName=false;">Cancel</a>
+      </span></div>
+
+    <div class="col-lg-4">
+        <input class="filter-message" placeholder="Filter your cards" ng-model="filterMessage" aria-label="Filter your cards" />
+      <span ng-show="voteService.remainingVotes(userId, maxVotes, messages) < maxVotes" class="remaining-votes">Remaining votes: <strong>{{ voteService.remainingVotes(userId, maxVotes, messages) }}</strong>
+      <span class="null-blank-space">&nbsp;</span>
+      <span class="settings" ng-click="modalService.openVoteSettings(this)"><i class='fa fa-pencil fa-md'></i></span>
+    </span></div> 
+    <div class="col-lg-5">
+        
+      <button class="btn btn-primary" ng-click="modalService.openAddNewBoardWithClose(this)">New board</button>
+      <button class="btn btn-primary" ng-show="board.columns.length < 6" ng-click="modalService.openAddNewColumn(this)">New column</button>
+      <button class="btn btn-success" ng-click="modalService.openVoteSettings(this)"><i class="fa fa-heart"></i>&nbsp;&nbsp;Vote settings</button>
+      <button class="btn btn-info" ng-click="importExportService.generatePdf(board, messages, sortField)"><i class="fa fa-download"></i>&nbsp;&nbsp;Export board to pdf</button></div>
+  </div>
+</div>
+  
